@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo App
 
-## Getting Started
+A simple Todo application built with **Next.js App Router**, **React**, **TypeScript**, and **Tailwind CSS**. Todos are stored in the browser with `localStorage` — no backend or database required.
 
-First, run the development server:
+## Features
+
+- Add, edit, and delete todos
+- Mark todos as completed or active
+- Filter by All, Active, and Completed
+- Persist todos in `localStorage`
+- Form validation and empty states
+- Responsive layout for desktop and mobile
+
+## Project structure
+
+```
+src/
+  app/              # Next.js App Router pages and global styles
+  components/       # UI components (form, list, filters, etc.)
+  hooks/            # Custom React hooks (useTodos)
+  lib/              # Helpers (localStorage)
+  types/            # Shared TypeScript types
+```
+
+## Prerequisites
+
+- Node.js 18+ (recommended)
+- npm
+
+## Installation
+
+```bash
+cd todo-app
+npm install
+```
+
+## Run locally
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Other scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production build
+npm run build
 
-## Learn More
+# Start the production server (after build)
+npm start
 
-To learn more about Next.js, take a look at the following resources:
+# Lint
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Data is saved only in the current browser via `localStorage`.
+- Clearing site data or using a different browser/device will not show the same todos.
+- This project intentionally has no authentication, API, database, or deployment tooling.
